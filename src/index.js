@@ -52,19 +52,11 @@ search how to save this dat ina  JSON
 
 // function constructorProject(name,description, dueDate){
 
-//     name,
-//     description,
-//     dueDate
-
-// };
 
 
 
-function addTask(toDo){
-    this.tasks.push(toDo)
 
-}
-
+// function to create a project
 function createProject(name,description, dueDate){
  
     return{
@@ -72,12 +64,40 @@ function createProject(name,description, dueDate){
        description,
        dueDate,
        tasks:[],
-       addTask:addTask
+       addTask:addTask,
+       removeTask:removeTask
     }
 
 };
 
 const project1 = createProject('trip to rome', 'planning a trip to the beautiful city of rome in italy', 2025);
+console.log(project1);
+
+// function to add tasks
+
+function addTask(toDo){
+    this.tasks.push(toDo)
+
+}
+project1.addTask('buy ticket');
+project1.addTask('book hotel');
+console.log(project1);
+console.log(project1.tasks);
+
+
+
+
+
+// function to remove task
+function removeTask(indexNumber){
+    // this.tasks.indexOf(taskName);
+    this.tasks.splice(indexNumber,indexNumber+1);
+}
+
+project1.removeTask(0);
+console.log(project1.tasks);
+
+
 
 
 
