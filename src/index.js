@@ -46,3 +46,51 @@ search how to save this dat ina  JSON
 
 
 // 
+
+//create project
+
+
+// function constructorProject(name,description, dueDate){
+
+//     name,
+//     description,
+//     dueDate
+
+// };
+
+
+
+function addTask(toDo){
+    this.tasks.push(toDo)
+
+}
+
+function createProject(name,description, dueDate){
+ 
+    return{
+       name, 
+       description,
+       dueDate,
+       tasks:[],
+       addTask:addTask
+    }
+
+};
+
+const project1 = createProject('trip to rome', 'planning a trip to the beautiful city of rome in italy', 2025);
+
+
+
+
+
+
+// class Project{
+//     constructorProject();
+
+// };
+
+// function createProject(name,description, dueDate){
+//     return new project
+// };
+
+
