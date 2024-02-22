@@ -57,7 +57,7 @@ search how to save this dat ina  JSON
 
 
 // function to create a project
-function createProject(name,description, dueDate){
+function createProject(name,description, dueDate, priority){
  
     return{
        name, 
@@ -65,12 +65,13 @@ function createProject(name,description, dueDate){
        dueDate,
        tasks:[],
        addTask:addTask,
-       removeTask:removeTask
+       removeTask:removeTask,
+       priority:priority
     }
 
 };
 
-const project1 = createProject('trip to rome', 'planning a trip to the beautiful city of rome in italy', 2025);
+const project1 = createProject('trip to Seoul', 'planning a trip to the beautiful city of rome in Seoul in South Korea', 2025);
 console.log(project1);
 
 // function to add tasks
@@ -99,6 +100,7 @@ console.log(project1.tasks);
 
 
 
+//  later on in dom i can do something to change class for the ones that are already done to cross out or for priority change to change color
 
 
 
