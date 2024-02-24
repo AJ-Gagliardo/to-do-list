@@ -47,19 +47,21 @@ search how to save this dat ina  JSON
 
 // 
 
+
+
+
+// an empty array to create put all the projects. 
+// Later on I will use storage on this to save all my projects / objects
+
+const projects = []
+
 //create project
-
-
 // function constructorProject(name,description, dueDate){
-
-
-
-
 
 // function to create a project
 function createProject(name,description, dueDate, priority){
  
-    return{
+    const project = {
        name, 
        description,
        dueDate,
@@ -68,6 +70,8 @@ function createProject(name,description, dueDate, priority){
        removeTask:removeTask,
        priority:priority
     }
+    projects.push(project);
+    return project;
 
 };
 
@@ -80,6 +84,8 @@ function addTask(toDo){
     this.tasks.push(toDo)
 
 }
+
+// adding  tasks to the sample project
 project1.addTask('buy ticket');
 project1.addTask('book hotel');
 console.log(project1);
@@ -95,8 +101,9 @@ function removeTask(indexNumber){
     this.tasks.splice(indexNumber,indexNumber+1);
 }
 
-project1.removeTask(0);
-console.log(project1.tasks);
+// //just testing the remove task
+// project1.removeTask(0);
+// console.log(project1.tasks);
 
 
 
@@ -116,3 +123,8 @@ console.log(project1.tasks);
 // };
 
 
+
+// barinstorm for whats next
+
+//  for the storage maybe I can store as an array (the projects) and also the array i arleady have ot tasks
+// then stringy them with JSON and then a forEach to display them 1 by one
