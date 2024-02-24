@@ -53,7 +53,28 @@ search how to save this dat ina  JSON
 // an empty array to create put all the projects. 
 // Later on I will use storage on this to save all my projects / objects
 
-const projects = []
+let projects = []
+
+function saveProjects(){
+
+    localStorage.setItem('myProjects', JSON.stringify(projects))
+}
+
+function loadProjects(){
+    const storedProjects = localStorage.getItem('myProjects');
+    if(storedProjects) {
+        projects = JSON.parse(storedProjects)
+    }
+    else{
+createSampleProject();
+        
+
+    }
+};
+
+loadProjects();
+
+
 
 //create project
 // function constructorProject(name,description, dueDate){
@@ -71,25 +92,39 @@ function createProject(name,description, dueDate, priority){
        priority:priority
     }
     projects.push(project);
+    //  ******** important, here use local Storage to save the new array of projects to local storage, add same to create and remove
+    saveProjects();
+    
     return project;
 
 };
 
-const project1 = createProject('trip to Seoul', 'planning a trip to the beautiful city of rome in Seoul in South Korea', 2025);
-console.log(project1);
+// sameple project, added in the default
+// const project1 = createProject('trip to Seoul', 'planning a trip to the beautiful city of rome in Seoul in South Korea', 2025);
+// console.log(project1);
 
 // function to add tasks
-
-function addTask(toDo){
-    this.tasks.push(toDo)
+// i guess n can be id or something
+function addTask(n,task){
+    // this.tasks.push(toDo) //toDo was previous parameter
+    projects[n].tasks.push(task);
 
 }
 
+function createSampleProject(){
+
+    createProject('trip to Seoul', 'planning a trip to the beautiful city of rome in Seoul in South Korea', 2025);
+    addTask(0,'buy ticket');
+    addTask(0,'book hotel');
+
+}
+
+
 // adding  tasks to the sample project
-project1.addTask('buy ticket');
-project1.addTask('book hotel');
-console.log(project1);
-console.log(project1.tasks);
+// project1.addTask('buy ticket');
+// project1.addTask('book hotel');
+// console.log(project1);
+// console.log(project1.tasks);
 
 
 
@@ -105,8 +140,8 @@ function removeTask(indexNumber){
 
 // ok now i have to test all of this and how to get back the info for later on havng it on the DOM
 
-console.log(projects[0].name) // prints 'Trip to Seoul'
-console.log(projects[0].tasks[0]) // prints the first task... can use for each and i to have all tasks individually
+// console.log(projects[0].name) // prints 'Trip to Seoul'
+// console.log(projects[0].tasks[0]) // prints the first task... can use for each and i to have all tasks individually
 
 
 // next step i guess would be adding a few projects, and doing a function to actually get all of the projects, a for each or a loop geting projects[i].name
@@ -122,6 +157,16 @@ function showAllProjectsNames(){
 
 // then same doing a foreach for each of the taks within that project probably this case 'i' and 'j' ina  loop
 // brainstorm: probably can use something which everytime i click a project, it will grab the tasks of that specific project but how?
+
+// i guess i will ahve to put id or class with the index number of the project and then get the projects[i].task
+
+function showAllTasks(n){
+// latter on n = id of the project which would be the index ... or making a search function that goes through the array 'projects' based on something.
+for(i=0;i<projects[n].tasks.length;i++){
+    console.log(projects[n].tasks[i]);
+}
+
+}
 
 
 //  later on in dom i can do something to change class for the ones that are already done to cross out or for priority change to change color
