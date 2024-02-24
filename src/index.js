@@ -101,26 +101,31 @@ function removeTask(indexNumber){
     this.tasks.splice(indexNumber,indexNumber+1);
 }
 
-// //just testing the remove task
-// project1.removeTask(0);
-// console.log(project1.tasks);
 
+
+// ok now i have to test all of this and how to get back the info for later on havng it on the DOM
+
+console.log(projects[0].name) // prints 'Trip to Seoul'
+console.log(projects[0].tasks[0]) // prints the first task... can use for each and i to have all tasks individually
+
+
+// next step i guess would be adding a few projects, and doing a function to actually get all of the projects, a for each or a loop geting projects[i].name
+
+// this is workign ok with console log, I will have to do one with DOM manipulation , will ahve to call function after local storage thing
+
+function showAllProjectsNames(){
+    for(i=0;i<projects.length;i++){
+        console.log(projects[i].name)
+    }
+}
+
+
+// then same doing a foreach for each of the taks within that project probably this case 'i' and 'j' ina  loop
+// brainstorm: probably can use something which everytime i click a project, it will grab the tasks of that specific project but how?
 
 
 //  later on in dom i can do something to change class for the ones that are already done to cross out or for priority change to change color
 
-
-
-
-
-// class Project{
-//     constructorProject();
-
-// };
-
-// function createProject(name,description, dueDate){
-//     return new project
-// };
 
 
 
