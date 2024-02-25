@@ -105,9 +105,9 @@ function createProject(name,description, dueDate, priority){
 
 // function to add tasks
 // i guess n can be id or something
-function addTask(n,task){
+function addTask(projectN,task){ //n is project number on the array projects
     // this.tasks.push(toDo) //toDo was previous parameter
-    projects[n].tasks.push(task);
+    projects[projectN].tasks.push(task);
 
 }
 
@@ -131,9 +131,10 @@ function createSampleProject(){
 
 
 // function to remove task
-function removeTask(indexNumber){
+function removeTask(projectN,taskN){ // n is project number on the projects array, i would be the task index on the array of tasks inside the individual project
     // this.tasks.indexOf(taskName);
-    this.tasks.splice(indexNumber,indexNumber+1);
+    // this.tasks.splice(indexNumber,indexNumber+1); //previous aprameter was indexNumber
+projects[projectN].tasks.spice(taskN,i+1);
 }
 
 
