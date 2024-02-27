@@ -84,10 +84,12 @@ function createProject(name,description, dueDate, priority){
  
     const project = {
        name, 
+       id:generateId(),
        description,
        dueDate,
        tasks:[],
        addTask:addTask,
+       removeProject:removeProject,
        removeTask:removeTask,
        priority:priority
     }
@@ -105,9 +107,27 @@ function createProject(name,description, dueDate, priority){
 
 // function to add tasks
 // i guess n can be id or something
-function addTask(projectN,task){ //n is project number on the array projects
-    // this.tasks.push(toDo) //toDo was previous parameter
-    projects[projectN].tasks.push(task);
+// function addTask(projectN,task){ //n is project number on the array projects
+//     // this.tasks.push(toDo) //toDo was previous parameter
+//     projects[projectN].tasks.push(task);
+
+// }
+
+function findProject(projectId){
+const project = projects.find(function(project) {
+        return project.id === projectId;
+    });
+    return project;
+
+} 
+
+
+
+function addTask(newTask){ 
+
+//   const projectId = currentProjectId; // should do this later as parameter
+findProject(currentProjectId).tasks.push(newTask);
+
 
 }
 
@@ -127,7 +147,10 @@ function createSampleProject(){
 // console.log(project1.tasks);
 
 
-
+//remove project
+function removeProject(){
+    return this.id;
+}
 
 
 // function to remove task
@@ -179,3 +202,14 @@ for(i=0;i<projects[n].tasks.length;i++){
 
 //  for the storage maybe I can store as an array (the projects) and also the array i arleady have ot tasks
 // then stringy them with JSON and then a forEach to display them 1 by one
+
+
+
+
+// when having dom, do a new variable:
+let currentProjectId;
+// the variable above will help me push the task to teh right project
+
+function generateId(){
+    return '_' + Math.random().toString(36).substr(2,9);
+} 

@@ -1,0 +1,66 @@
+:root{
+    background-color:black;
+    color:whitesmoke;
+   margin:0;
+}
+body{
+    margin:0;
+    padding:0;
+}
+
+
+h1{
+    font-size: 2.5rem;
+}
+
+h2{
+    font-size: 2.5rem;
+
+}
+
+h3{
+    font-size: 2rem;
+}
+
+p{
+    font-size: 1.5rem;
+}
+
+
+.taskName, .projectName, .projectsTitle, .tasksTitle, .tasksSubtitle{
+
+    padding: 1rem;
+    margin:0;
+
+
+}
+
+.projectName{
+    /* background-color: red; */
+}
+
+.projectsTitle, .tasksTitle{
+    padding-top:1rem;
+    padding-bottom: 3rem;
+}
+
+.taskSubtitle{
+    padding-top:1rem;
+    padding:2rem;
+
+}
+
+
+
+#container{
+display:grid;
+grid-template-columns: 1fr 2fr;
+}
+
+#leftSide{
+    background-color: #111827;
+}
+#rightSide{
+background-color: #1f2937;
+height:100vh;
+}
