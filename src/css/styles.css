@@ -27,7 +27,7 @@ p{
 }
 
 
-.taskName, .projectName, .projectsTitle, .tasksTitle, .tasksSubtitle{
+.taskName, .projectName, .projectsTitle, .tasksTitle, .tasksSubtitle, .projectName{
 
     padding: 1rem;
     margin:0;
@@ -57,10 +57,21 @@ display:grid;
 grid-template-columns: 1fr 2fr;
 }
 
+/* left Side */
+
 #leftSide{
     background-color: #111827;
 }
+
+
+
+/* right side  */
 #rightSide{
 background-color: #1f2937;
 height:100vh;
+}
+
+.task{
+    display:flex;
+    padding-left: 1rem;
 }
