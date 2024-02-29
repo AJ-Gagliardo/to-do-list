@@ -54,7 +54,7 @@ p{
 
 #container{
 display:grid;
-grid-template-columns: 1fr 2fr;
+grid-template-columns: 1fr 3fr;
 }
 
 /* left Side */
@@ -68,10 +68,49 @@ grid-template-columns: 1fr 2fr;
 /* right side  */
 #rightSide{
 background-color: #1f2937;
-height:100vh;
+height:90vh;
 }
 
 .task{
     display:flex;
     padding-left: 1rem;
+}
+
+.footer a{
+    color:white;
+
+}
+
+.footer img{
+    height:2rem;
+    width:2rem;
+}
+
+.githublogo{
+    height:2rem;
+    width:2rem;
+    /* background-color: white; */
+    border-radius: 50%;
+  
+}
+
+.footer{
+    display:flex;
+    align-items:center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+   
+}
+
+.footer a{
+    margin-top:10px;
+    text-decoration: none ;
+
+    display:flex;
+    align-items:center;
+    }
+
+.footer a:hover{
+    color: #d2d441;
 }
