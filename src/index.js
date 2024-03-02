@@ -133,7 +133,7 @@ findProject(currentProjectId).tasks.push(newTask);
 
 function createSampleProject(){
 
-    createProject('trip to Seoul', 'planning a trip to the beautiful city of rome in Seoul in South Korea', 2025);
+    createProject('Trip to Seoul', 'planning a trip to the beautiful city of rome in Seoul in South Korea', 2025);
     addTask(0,'buy ticket');
     addTask(0,'book hotel');
 
@@ -207,9 +207,70 @@ for(i=0;i<projects[n].tasks.length;i++){
 
 
 // when having dom, do a new variable:
-let currentProjectId;
+let currentProjectId = projects[0].id;
 // the variable above will help me push the task to teh right project
 
 function generateId(){
     return '_' + Math.random().toString(36).substr(2,9);
 } 
+
+
+// DOm selecition, areas
+
+const header = document.getElementById('header');
+
+
+const leftSide = document.getElementById('leftSide');
+
+const rightSide = document.getElementById('rightSide');
+
+console.log(header);
+console.log(leftSide)
+console.log(rightSide)
+
+
+function createProjectSVG() {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("class", "svgImg");
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    svg.setAttribute("fill", "none");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("stroke-width", "1.5");
+    svg.setAttribute("stroke", "currentColor");
+    svg.setAttribute("class", "w-6 h-6");
+
+    svg.classList.add('svgImg');
+
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("stroke-linecap", "round");
+    path.setAttribute("stroke-linejoin", "round");
+    path.setAttribute("d", "M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z");
+
+    svg.appendChild(path);
+
+    return svg;
+}
+
+// *** Factory functions for doms
+
+
+// have to use in cconjunction with 'loadprojects()'
+
+function loadProjectsDOM(){
+
+    for(let i=0;i<projects.length;i++){
+        // first create div container of the project
+        const div = document.createElement('div');
+        div.classList.add('project');
+        // get the svg
+        const svg= createProjectSVG();
+        // title of the project
+        const h3 = document.createElement('h3');
+        h3.textContent = projects[i].name;
+
+       div.appendChild(svg);
+       div.appendChild(h3);
+
+       leftSide.appendChild(div);
+    }
+}
