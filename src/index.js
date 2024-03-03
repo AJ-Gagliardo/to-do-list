@@ -248,10 +248,13 @@ const rightSide = document.getElementById('rightSide');
 
 const tasksMenu = document.getElementById('tasksMenu');
 
+const description = document.getElementById('description');
+
 console.log(header);
 console.log(leftSide);
 console.log(rightSide);
 console.log(tasksMenu);
+console.log(description);
 
 
 function createProjectSVG() {
@@ -306,9 +309,9 @@ function loadProjectsDOM(){
 
 
 function loadTasksDOM(){
-    const description = document.createElement('p');
+    // const description = document.createElement('p');
     description.textContent = findProject(currentProjectId).description;
-    tasksMenu.appendChild(description);
+    // tasksMenu.appendChild(description);
 
     for(let i=0;i<findProject(currentProjectId).tasks.length;i++){
         // create the div for every task
@@ -342,3 +345,12 @@ else{
     }
 }
 
+
+function clearTasksDom(){
+    const allTasks = document.querySelectorAll('.task');
+    
+    allTasks.forEach(task => {
+        tasksMenu.removeChild(task);
+        
+    });
+}
