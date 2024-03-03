@@ -115,21 +115,23 @@ function addTask(newTask){
 
 //   const projectId = currentProjectId; // should do this later as parameter
 findProject(currentProjectId).tasks.push(newTask);
+saveProjects();
 
 
 }
 
 function createSampleProject(){
    
-    createProject('Trip to Seoul', 'planning a trip to the beautiful city of rome in Seoul in South Korea', 2025);
+    createProject('Trip to Seoul', 'Planning a trip to the beautiful city of rome in Seoul in South Korea', 2025);
  
 
 }
 
 function createSampleTasks(){
     currentProjectId = projects[0].id;
-    addTask('buy ticket');
-    addTask('book hotel');
+    addTask('Buy flight ticket');
+    addTask('Book hotel');
+
 
 }
 
@@ -230,6 +232,7 @@ createSampleTasks();
 };
 
 loadProjects();
+currentProjectId = projects[0].id
 
 
 
@@ -243,9 +246,12 @@ const leftSide = document.getElementById('leftSide');
 
 const rightSide = document.getElementById('rightSide');
 
+const tasksMenu = document.getElementById('tasksMenu');
+
 console.log(header);
-console.log(leftSide)
-console.log(rightSide)
+console.log(leftSide);
+console.log(rightSide);
+console.log(tasksMenu);
 
 
 function createProjectSVG() {
@@ -298,8 +304,31 @@ function loadProjectsDOM(){
 
 
 function loadTasksDOM(){
-    // for(let i=0;i>findProject(currentProjectId).tasks.length){
-    //     return;
-    // }
+    const description = document.createElement('p');
+    description.textContent = findProject(currentProjectId).description;
+    tasksMenu.appendChild(description);
+
+    for(let i=0;i<findProject(currentProjectId).tasks.length;i++){
+        // create the div for every task
+        const div = document.createElement('div');
+        div.classList.add('task');
+   
+        // create the checkbox
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        // have to add event listener that adds/changes if its checked or not
+
+        // actual content
+        const p = document.createElement('p');
+        p.classList.add('taskName');
+        p.textContent = findProject(currentProjectId).tasks[i];
+        
+        //putting all of it together 
+      
+        div.appendChild(checkbox);
+  
+        div.appendChild(p);
+        tasksMenu.appendChild(div);
+    }
 }
 
