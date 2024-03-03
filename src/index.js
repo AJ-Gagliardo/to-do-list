@@ -55,24 +55,7 @@ search how to save this dat ina  JSON
 
 let projects = []
 
-function saveProjects(){
 
-    localStorage.setItem('myProjects', JSON.stringify(projects))
-}
-
-function loadProjects(){
-    const storedProjects = localStorage.getItem('myProjects');
-    if(storedProjects) {
-        projects = JSON.parse(storedProjects)
-    }
-    else{
-createSampleProject();
-        
-
-    }
-};
-
-loadProjects();
 
 
 
@@ -95,6 +78,11 @@ function createProject(name,description, dueDate, priority){
     }
     projects.push(project);
     //  ******** important, here use local Storage to save the new array of projects to local storage, add same to create and remove
+   
+   
+   
+   
+   
     saveProjects();
     
     return project;
@@ -132,10 +120,16 @@ findProject(currentProjectId).tasks.push(newTask);
 }
 
 function createSampleProject(){
-
+   
     createProject('Trip to Seoul', 'planning a trip to the beautiful city of rome in Seoul in South Korea', 2025);
-    addTask(0,'buy ticket');
-    addTask(0,'book hotel');
+ 
+
+}
+
+function createSampleTasks(){
+    currentProjectId = projects[0].id;
+    addTask('buy ticket');
+    addTask('book hotel');
 
 }
 
@@ -207,12 +201,37 @@ for(i=0;i<projects[n].tasks.length;i++){
 
 
 // when having dom, do a new variable:
-let currentProjectId = projects[0].id;
+let currentProjectId; 
+// = projects[0].id;
 // the variable above will help me push the task to teh right project
 
 function generateId(){
     return '_' + Math.random().toString(36).substr(2,9);
 } 
+
+
+
+function saveProjects(){
+
+    localStorage.setItem('myProjects', JSON.stringify(projects))
+}
+
+function loadProjects(){
+    const storedProjects = localStorage.getItem('myProjects');
+    if(storedProjects) {
+        projects = JSON.parse(storedProjects)
+    }
+    else{
+createSampleProject();
+createSampleTasks();
+        
+
+    }
+};
+
+loadProjects();
+
+
 
 
 // DOm selecition, areas
@@ -251,10 +270,12 @@ function createProjectSVG() {
     return svg;
 }
 
+
 // *** Factory functions for doms
 
 
 // have to use in cconjunction with 'loadprojects()'
+
 
 function loadProjectsDOM(){
 
@@ -274,3 +295,11 @@ function loadProjectsDOM(){
        leftSide.appendChild(div);
     }
 }
+
+
+function loadTasksDOM(){
+    // for(let i=0;i>findProject(currentProjectId).tasks.length){
+    //     return;
+    // }
+}
+
