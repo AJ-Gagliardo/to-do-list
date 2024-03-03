@@ -303,6 +303,8 @@ function loadProjectsDOM(){
 }
 
 
+
+
 function loadTasksDOM(){
     const description = document.createElement('p');
     description.textContent = findProject(currentProjectId).description;
@@ -316,6 +318,14 @@ function loadTasksDOM(){
         // create the checkbox
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
+        checkbox.addEventListener('change', function(){
+if(this.checked){
+    p.classList.add('completed');
+}
+else{
+    p.classList.remove('completed');
+}
+        });
         // have to add event listener that adds/changes if its checked or not
 
         // actual content

@@ -136,7 +136,10 @@ height:90vh;
 
 }
 
+.completed{
 
+    text-decoration: line-through;
+}
 
 
 /* Footer */
