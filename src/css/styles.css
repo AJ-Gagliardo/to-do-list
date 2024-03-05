@@ -85,7 +85,7 @@ padding-right: 2rem;
 
 }
 
-#addBtn{
+#addProjectBtn{
     background-color: transparent;
     color:whitesmoke;
     border: none;
@@ -139,9 +139,21 @@ height:90vh;
 .completed{
 
     text-decoration: line-through;
+    filter:brightness(50%)
 }
 
+.controlBtns{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.addTask{
+    color:green
+}
 
+.removeProject{
+    color:crimson;
+}
 /* Footer */
 .footer img{
     height:2rem;

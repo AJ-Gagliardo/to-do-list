@@ -158,6 +158,13 @@ const project = projects.find(function(project) {
 
 } 
 
+function findProjectbyName(projectName){
+    const project = projects.find(function(project){
+        return project.name === projectName
+    });
+    return project;
+}
+
 
 
 function addTask(newTask){ 
@@ -314,6 +321,13 @@ function clearProjectsDOM(){
     });
 }
 
+function clickProject(){
+  
+        console.log('click');
+        
+    }
+
+
 function loadProjectsDOM(){
 
     for(let i=0;i<projects.length;i++){
@@ -326,9 +340,17 @@ function loadProjectsDOM(){
         const h3 = document.createElement('h3');
         h3.textContent = projects[i].name;
 
+        const thisProjectId = projects[i].id
+   
+
        div.appendChild(svg);
        div.appendChild(h3);
-
+        div.addEventListener('click',()=>{
+            console.log(thisProjectId);
+            currentProjectId = thisProjectId;
+            clearTasksDom();
+            loadTasksDOM();
+        });
        projectsMenu.appendChild(div);
     }
 }
