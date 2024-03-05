@@ -138,17 +138,7 @@ function createProject(name,description, dueDate, priority){
 
 };
 
-// sameple project, added in the default
-// const project1 = createProject('trip to Seoul', 'planning a trip to the beautiful city of rome in Seoul in South Korea', 2025);
-// console.log(project1);
 
-// function to add tasks
-// i guess n can be id or something
-// function addTask(projectN,task){ //n is project number on the array projects
-//     // this.tasks.push(toDo) //toDo was previous parameter
-//     projects[projectN].tasks.push(task);
-
-// }
 
 function findProject(projectId){
 const project = projects.find(function(project) {
@@ -192,12 +182,6 @@ function createSampleTasks(){
 }
 
 
-// adding  tasks to the sample project
-// project1.addTask('buy ticket');
-// project1.addTask('book hotel');
-// console.log(project1);
-// console.log(project1.tasks);
-
 
 //remove project
 function removeProject(){
@@ -213,14 +197,6 @@ projects[projectN].tasks.spice(taskN,i+1);
 }
 
 
-
-// ok now i have to test all of this and how to get back the info for later on havng it on the DOM
-
-// console.log(projects[0].name) // prints 'Trip to Seoul'
-// console.log(projects[0].tasks[0]) // prints the first task... can use for each and i to have all tasks individually
-
-
-// next step i guess would be adding a few projects, and doing a function to actually get all of the projects, a for each or a loop geting projects[i].name
 
 // this is workign ok with console log, I will have to do one with DOM manipulation , will ahve to call function after local storage thing
 
