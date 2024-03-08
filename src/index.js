@@ -81,6 +81,8 @@ console.log(addProjectBtn);
 console.log(addProjectBtn2);
 
 
+// creating svgs
+
 function createProjectSVG() {
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute("class", "svgImg");
@@ -102,6 +104,7 @@ function createProjectSVG() {
 
     return svg;
 }
+
 
 
 
@@ -138,6 +141,29 @@ function createProject(name,description, dueDate, priority){
     return project;
 
 };
+
+
+// DOM EVENT LISTENER FOR CREATE PROJECTS
+
+const projectDialog = document.getElementById('projectDialog');
+
+addProjectBtn2.addEventListener('click',()=>{
+projectDialog.show();
+})
+
+const cancelBtns = document.querySelectorAll('.cancelButton');
+
+cancelBtns.forEach(btn => {
+    btn.addEventListener('click',()=>{
+        projectDialog.close();
+       
+        // i will add task dialog close too.
+    })
+    
+});
+
+
+/////
 
 
 
