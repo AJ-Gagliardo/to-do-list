@@ -72,18 +72,21 @@
     </h3>
     
     </div>
+    
     <dialog id="projectDialog">
-        <form class="form" method="dialog">
+        <form class="form" method="dialog" id="projectForm">
             <label for="projectTitleInput">Project Name:</label>
-            <input type="text" id="projectTitleInput" required minlength="3" maxlength="20">  <input type="text" id="projectTitleInput" required minlength="3" maxlength="20">
+            <input type="text" id="projectTitleInput" required minlength="3" maxlength="20">  
             <label for="priority">Priority Level:</label>
             <select id="priority" name="priority">
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
             </select>
-            <label for="description">Description</label>
-            <textarea id="description" name="description"></textarea>
+            <label>Description
+
+                <textarea name="description" id="description"></textarea>
+            </label>
             <button type="submit">Submit</button>
         </form>
     </dialog>
