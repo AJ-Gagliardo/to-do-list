@@ -72,12 +72,13 @@ const description = document.getElementById('description');
 
 const projectsMenu = document.getElementById('projectsMenu');
 
-console.log(header);
-console.log(leftSide);
-console.log(rightSide);
-console.log(tasksMenu);
-console.log(description);
-console.log(projectsMenu)
+const addProjectBtn = document.getElementById('addProjectBtn');
+
+const addProjectBtn2 = document.getElementById('addProjectBtn');
+
+
+console.log(addProjectBtn);
+console.log(addProjectBtn2);
 
 
 function createProjectSVG() {
