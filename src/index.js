@@ -63,18 +63,16 @@ const header = document.getElementById('header');
 
 
 const leftSide = document.getElementById('leftSide');
-
 const rightSide = document.getElementById('rightSide');
 
 const tasksMenu = document.getElementById('tasksMenu');
-
 const description = document.getElementById('description');
-
 const projectsMenu = document.getElementById('projectsMenu');
 
 const addProjectBtn = document.getElementById('addProjectBtn');
-
 const addProjectBtn2 = document.getElementById('addProjectBtn');
+const projectDialog = document.getElementById('projectDialog');
+const submitProjectBtn = document.getElementById('submitProjectBtn');
 
 
 console.log(addProjectBtn);
@@ -136,6 +134,7 @@ function createProject(name,description, dueDate, priority){
     saveProjects();
     // have to put the one that clears the Projects DOM and then adds the new one
     // or shouold add in the crate new projects to include the new dom
+    clearProjectsDOM();
     loadProjectsDOM();
     
     return project;
@@ -145,7 +144,7 @@ function createProject(name,description, dueDate, priority){
 
 // DOM EVENT LISTENER FOR CREATE PROJECTS
 
-const projectDialog = document.getElementById('projectDialog');
+
 
 addProjectBtn2.addEventListener('click',()=>{
 projectDialog.show();
@@ -161,6 +160,19 @@ cancelBtns.forEach(btn => {
     })
     
 });
+
+const projectTitleInput = document.getElementById('projectTitleInput');
+const projectPriority = document.getElementById('projectPriority');
+const projectDescription = document.getElementById('projectDescriptionInput');
+
+console.log(projectDescription);
+
+submitProjectBtn.addEventListener('click',()=>{
+    createProject(projectTitleInput.value, 
+        projectDescription.value   , 
+        2014, 
+        projectPriority.value )
+})
 
 
 /////

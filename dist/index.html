@@ -77,17 +77,17 @@
         <form class="form" method="dialog" id="projectForm">
             <label for="projectTitleInput">Project Name:</label>
             <input type="text" id="projectTitleInput" required minlength="3" maxlength="20">  
-            <label for="priority">Priority Level:</label>
-            <select id="priority" name="priority">
+            <label for="projectPriority">Priority Level:</label>
+            <select id="projectPriority" name="ProjectPriority">
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
             </select>
             <label>Description
 
-                <textarea name="description" id="description"></textarea>
+                <textarea name="description" id="projectDescriptionInput"></textarea>
             </label>
-            <button type="submit">Submit</button>
+            <button type="submit" id="submitProjectBtn">Submit</button>
             <button class="cancelButton">Cancel</button> 
         </form>
     </dialog>
