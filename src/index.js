@@ -103,7 +103,30 @@ function createProjectSVG() {
     return svg;
 }
 
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+</svg>
 
+
+function createDeleteSvg(){
+
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    svg.setAttribute("fill", "none");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("stroke-width", "1.5");
+    svg.setAttribute("stroke", "currentColor");
+    svg.setAttribute("class", "w-6 h-6");
+    svg.classList.add('svg');
+    // Create the path element
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("stroke-linecap", "round");
+    path.setAttribute("stroke-linejoin", "round");
+    path.setAttribute("d", "m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z");
+ svg.appendChild(path);
+    
+    
+}
 
 
 
@@ -224,7 +247,7 @@ function createSampleTasks(){
 
 //remove project
 function removeProject(){
-    return this.id;
+    // findProject(currentProjectId)
 }
 
 
