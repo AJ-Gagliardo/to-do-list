@@ -103,28 +103,29 @@ function createProjectSVG() {
     return svg;
 }
 
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-</svg>
 
 
 function createDeleteSvg(){
 
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("class", "svgImg");
     svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
     svg.setAttribute("fill", "none");
     svg.setAttribute("viewBox", "0 0 24 24");
     svg.setAttribute("stroke-width", "1.5");
     svg.setAttribute("stroke", "currentColor");
     svg.setAttribute("class", "w-6 h-6");
-    svg.classList.add('svg');
+    svg.classList.add('svgImg');
+    svg.classList.add('delSvg')
     // Create the path element
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
     path.setAttribute("stroke-linecap", "round");
     path.setAttribute("stroke-linejoin", "round");
     path.setAttribute("d", "m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z");
  svg.appendChild(path);
-    
+
+ return svg;
+
     
 }
 
@@ -256,6 +257,7 @@ function removeTask(projectN,taskN){ // n is project number on the projects arra
     // this.tasks.indexOf(taskName);
     // this.tasks.splice(indexNumber,indexNumber+1); //previous aprameter was indexNumber
 projects[projectN].tasks.spice(taskN,i+1);
+// probably hav eto do a funciton that finds the index of the task that i want (maybe by checking the text content on tasks[])
 }
 
 
@@ -409,6 +411,7 @@ function loadTasksDOM(){
         // create the checkbox
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
+        checkbox.classList.add('checkbox')
         checkbox.addEventListener('change', function(){
 if(this.checked){
     p.classList.add('completed');
@@ -424,11 +427,21 @@ else{
         p.classList.add('taskName');
         p.textContent = findProject(currentProjectId).tasks[i];
         
+        //svg Delete task
+
+        const svgDelete = createDeleteSvg();
+//         svgDelete.addEventListener('click',function(){
+// // removeTask();
+//         })
+
+
+
         //putting all of it together 
       
         div.appendChild(checkbox);
   
         div.appendChild(p);
+        div.appendChild(svgDelete)
         tasksMenu.appendChild(div);
     }
 }

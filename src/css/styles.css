@@ -176,6 +176,22 @@ height:90vh;
     text-align: center;
    
 }
+.delSvg{
+
+}
+
+.task{
+    display: grid;
+    grid-template-columns: 0.5fr 5fr 1fr;
+    align-content: center;
+    align-items:center ;
+}
+
+.checkbox{
+    height:40%;
+    width:40%;
+}
+
 
 .footer a{
     margin-top:10px;
