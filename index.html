@@ -52,20 +52,12 @@
     <div id="tasksMenu">
 
         
-        <!-- <div class="task">
-            <input type="checkbox">
-            <p class="taskName">Book flight ticket</p>
-        </div>
-        
-        <div class="task">
-            <input type="checkbox">
-            <p class="taskName">Book hotel</p>
-        </div> -->
+     
     </div>
 
 
     <div class="controlBtns">
-        <h3 class="addTask">Add Task +</h3>
+        <h3 class="addTask" id="addTask">Add Task +</h3>
     
     <h3 class="removeProject" id="removeProject">
         Remove Project
@@ -73,19 +65,19 @@
     
     </div>
 
-    <dialog id="projectDialog">
-        <form class="form" method="dialog" id="projectForm">
+    <dialog id="projectDialog" modal>
+        <form class="form" method="dialog" id="projectForm" modal>
             <label for="projectTitleInput">Project Name:</label>
             <input type="text" id="projectTitleInput" required minlength="3" maxlength="20">  
             <label for="projectPriority">Priority Level:</label>
-            <select id="projectPriority" name="ProjectPriority">
+            <select id="projectPriority" name="projectPriority">
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
             </select>
             <label>Description
 
-                <textarea name="description" id="projectDescriptionInput"></textarea>
+                <textarea name="description" id="projectDescriptionInput" maxlength="60" minlength="3"></textarea>
             </label>
             <button type="submit" id="submitProjectBtn">Submit</button>
             <button class="cancelButton">Cancel</button> 
@@ -93,6 +85,17 @@
     </dialog>
     
 </div>
+
+<dialog id="taskDialog" modal>
+    <form class="form" method="dialog" id="taskForm">
+        <label> Task:
+            <textarea id="taskText" cols="20" rows="10"></textarea>
+        </label>
+        <button type="submit" id="submitTaskBtn">Submit</button>
+            <button class="cancelButton">Cancel</button> 
+
+    </form>
+</dialog>
 
 
 
