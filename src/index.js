@@ -74,7 +74,13 @@ const addProjectBtn2 = document.getElementById('addProjectBtn2');
 const projectDialog = document.getElementById('projectDialog');
 const submitProjectBtn = document.getElementById('submitProjectBtn');
 
+
+const taskDialog = document.getElementById('taskDialog');
+const addTaskDOM = document.getElementById('addTask');
 const removeProjectDOM = document.getElementById('removeProject');
+const taskText = document.getElementById('taskText');
+
+
 
 console.log(removeProjectDOM);
 
@@ -173,11 +179,11 @@ function createProject(name,description, dueDate, priority){
 // DOM EVENT LISTENER FOR CREATE PROJECTS
 
 addProjectBtn.addEventListener('click',()=>{
-    projectDialog.show();
+    projectDialog.showModal();
     })
 
 addProjectBtn2.addEventListener('click',()=>{
-projectDialog.show();
+projectDialog.showModal();
 })
 
 const cancelBtns = document.querySelectorAll('.cancelButton');
@@ -496,6 +502,12 @@ function clearTasksDom(){
 };
 
 
+// some event listeenrs
+
 removeProjectDOM.addEventListener('click', ()=>{
     removeProject();
+})
+
+addTaskDOM.addEventListener('click',()=>{
+taskDialog.showModal();
 })

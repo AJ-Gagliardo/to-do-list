@@ -90,7 +90,12 @@ padding-right: 2rem;
     color:whitesmoke;
     border: none;
     font-size: 1rem;
+    /* padding-left: 2rem ; */
 
+}
+
+#addProjectBtn2{
+    padding-left: 2rem;
 }
 /* left Side */
 
@@ -154,6 +159,40 @@ height:90vh;
 .removeProject{
     color:crimson;
 }
+
+
+.addTask:hover, .removeProject:hover, #addProjectBtn:hover, #addProjectBtn2:hover{
+
+    cursor:pointer;
+    color:goldenrod;
+    /* font-size: 2.2rem; */
+    transition: transform 0.2s;
+    transform: scale(1.20);
+
+}
+
+.addTask, .removeProject{
+    /* margin:1rem; */
+    /* padding:1rem; */
+    
+}
+
+/* dialog */
+
+#projectDialog{
+    width:80%;
+    min-height: 15%;
+    font-size: 1rem;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+#projectDialog::backdrop{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 /* Footer */
 .footer img{
     height:2rem;
@@ -204,3 +243,4 @@ height:90vh;
 .footer a:hover{
     color: #d2d441;
 }
+
