@@ -74,6 +74,10 @@ const addProjectBtn2 = document.getElementById('addProjectBtn');
 const projectDialog = document.getElementById('projectDialog');
 const submitProjectBtn = document.getElementById('submitProjectBtn');
 
+const removeProjectDOM = document.getElementById('removeProject');
+
+console.log(removeProjectDOM);
+
 
 console.log(addProjectBtn);
 console.log(addProjectBtn2);
@@ -211,6 +215,16 @@ const project = projects.find(function(project) {
 
 } 
 
+function findProjectId(projectId){
+    for(i=0;i<projects.length;i++){
+        if (projects[i].id === projectId){
+            return i;
+        }
+      
+    }
+}
+
+
 function findTask(){
     findProject(currentProjectId).tasks[i]
 }
@@ -254,7 +268,7 @@ function createSampleTasks(){
 
 //remove project
 function removeProject(){
-    // findProject(currentProjectId)
+    findProjectId(currentProjectId)
 }
 
 
@@ -471,4 +485,6 @@ function clearTasksDom(){
         tasksMenu.removeChild(task);
         
     });
-}
+};
+
+
