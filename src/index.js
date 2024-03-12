@@ -70,7 +70,7 @@ const description = document.getElementById('description');
 const projectsMenu = document.getElementById('projectsMenu');
 
 const addProjectBtn = document.getElementById('addProjectBtn');
-const addProjectBtn2 = document.getElementById('addProjectBtn');
+const addProjectBtn2 = document.getElementById('addProjectBtn2');
 const projectDialog = document.getElementById('projectDialog');
 const submitProjectBtn = document.getElementById('submitProjectBtn');
 
@@ -172,7 +172,9 @@ function createProject(name,description, dueDate, priority){
 
 // DOM EVENT LISTENER FOR CREATE PROJECTS
 
-
+addProjectBtn.addEventListener('click',()=>{
+    projectDialog.show();
+    })
 
 addProjectBtn2.addEventListener('click',()=>{
 projectDialog.show();
@@ -268,11 +270,17 @@ function createSampleTasks(){
 
 //remove project
 function removeProject(){
-    findProjectId(currentProjectId)
+    projects.splice(findProjectId(currentProjectId),1);
+    saveProjects();
+    clearProjectsDOM();
+    loadProjectsDOM();
+    clearTasksDom();
+    description.textContent = '';
 }
 
 
-// function to remove task
+// function to remove task, 
+//this was just for test, I had to use another similar inside another function
 function removeTask(projectN,taskN){ // n is project number on the projects array, i would be the task index on the array of tasks inside the individual project
     // this.tasks.indexOf(taskName);
     // this.tasks.splice(indexNumber,indexNumber+1); //previous aprameter was indexNumber
@@ -488,3 +496,6 @@ function clearTasksDom(){
 };
 
 
+removeProjectDOM.addEventListener('click', ()=>{
+    removeProject();
+})
