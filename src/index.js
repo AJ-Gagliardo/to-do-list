@@ -211,6 +211,10 @@ const project = projects.find(function(project) {
 
 } 
 
+function findTask(){
+    findProject(currentProjectId).tasks[i]
+}
+
 function findProjectbyName(projectName){
     const project = projects.find(function(project){
         return project.name === projectName
@@ -225,6 +229,8 @@ function addTask(newTask){
 //   const projectId = currentProjectId; // should do this later as parameter
 findProject(currentProjectId).tasks.push(newTask);
 saveProjects();
+clearTasksDom();
+loadTasksDOM();
 
 
 }
@@ -256,7 +262,7 @@ function removeProject(){
 function removeTask(projectN,taskN){ // n is project number on the projects array, i would be the task index on the array of tasks inside the individual project
     // this.tasks.indexOf(taskName);
     // this.tasks.splice(indexNumber,indexNumber+1); //previous aprameter was indexNumber
-projects[projectN].tasks.spice(taskN,i+1);
+projects[projectN].tasks.splice(taskN,i+1);
 // probably hav eto do a funciton that finds the index of the task that i want (maybe by checking the text content on tasks[])
 }
 
@@ -405,6 +411,7 @@ function loadTasksDOM(){
 
     for(let i=0;i<findProject(currentProjectId).tasks.length;i++){
         // create the div for every task
+        const tasksArray = findProject(currentProjectId).tasks;
         const div = document.createElement('div');
         div.classList.add('task');
    
@@ -429,10 +436,20 @@ else{
         
         //svg Delete task
 
+        // The following is to remove the clicked task
+
         const svgDelete = createDeleteSvg();
-//         svgDelete.addEventListener('click',function(){
-// // removeTask();
-//         })
+        svgDelete.addEventListener('click',function(){
+//this is the aprt that deletes the task
+    tasksArray.splice(i,1)
+    //then the project is saved
+    saveProjects();
+
+    //Dom is reseted.
+    clearTasksDom();
+    loadTasksDOM();
+
+        })
 
 
 
