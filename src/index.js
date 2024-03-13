@@ -265,7 +265,7 @@ loadTasksDOM();
 
 function createSampleProject(){
    
-    createProject('Trip to Seoul', 'Planning a trip to the beautiful city of rome in Seoul in South Korea', 2025);
+    createProject('Trip to Seoul', 'Planning a trip to the beautiful city of Seoul in South Korea', 2025);
  
 
 }

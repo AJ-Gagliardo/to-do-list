@@ -1,6 +1,6 @@
 :root{
-    background-color:black;
-    color:whitesmoke;
+    /* background-color:black; */
+    /* color:whitesmoke; */
    margin:0;
 }
 body{
@@ -33,6 +33,30 @@ p{
     margin:0;
 
 
+}
+
+#theme{
+    height:2rem;
+    width:2rem;
+    /* background-color:white; */
+    margin-right: 1rem;
+
+}
+
+#theme{
+    filter: brightness(0) invert(1) grayscale(1);
+}
+/* .darkThemeImg{
+    filter: brightness(0) invert(1) grayscale(1);
+}
+
+.lightThemeImg{
+    filter: brightness(0) invert(0) grayscale(1);
+} */
+
+#rightNav{
+    display:flex;
+    align-items: center;
 }
 
 .projectsTitle{
@@ -87,9 +111,10 @@ padding-right: 2rem;
 
 #addProjectBtn{
     background-color: transparent;
-    color:whitesmoke;
+    /* color:whitesmoke; */
     border: none;
     font-size: 1rem;
+
     /* padding-left: 2rem ; */
 
 }
@@ -100,7 +125,7 @@ padding-right: 2rem;
 /* left Side */
 
 #leftSide{
-    background-color: #111827;
+    /* background-color: #111827; */
 }
 
 .svgImg{
@@ -127,7 +152,7 @@ padding-right: 2rem;
 
 /* right side  */
 #rightSide{
-background-color: #1f2937;
+/* background-color: #1f2937; */
 height:90vh;
 }
 
@@ -139,6 +164,10 @@ height:90vh;
 .footer a{
     color:white;
 
+}
+
+#description{
+    margin-left: 1rem;
 }
 
 .completed{
@@ -168,7 +197,12 @@ height:90vh;
     /* font-size: 2.2rem; */
     transition: transform 0.2s;
     transform: scale(1.20);
+    text-shadow: 2px 2px 4px rgba(253, 252, 252, 0.5);
 
+}
+
+#addProjectBtn:hover{
+    color:white;
 }
 
 .addTask, .removeProject{
@@ -213,6 +247,7 @@ height:90vh;
     align-content: center;
     justify-content: center;
     text-align: center;
+    background-color: black;
    
 }
 .delSvg{
@@ -244,3 +279,25 @@ height:90vh;
     color: #d2d441;
 }
 
+/* Themes */
+
+.lightTheme1{
+    background-color: #c1c0b9;
+}
+
+.lightTheme2{
+    background-color: #e7e6e1;
+}
+
+.lightTheme3{
+    background-color:whitesmoke
+}
+
+#header{
+    background-color: black;
+    color:white;
+}
+
+#addProjectBtn{
+    color:white;
+}
