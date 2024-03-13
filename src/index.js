@@ -201,13 +201,19 @@ const projectTitleInput = document.getElementById('projectTitleInput');
 const projectPriority = document.getElementById('projectPriority');
 const projectDescription = document.getElementById('projectDescriptionInput');
 
-console.log(projectDescription);
+const submitTaskBtn = document.getElementById('submitTaskBtn');
+
+
 
 submitProjectBtn.addEventListener('click',()=>{
     createProject(projectTitleInput.value, 
         projectDescription.value   , 
         2014, 
         projectPriority.value )
+})
+
+submitTaskBtn.addEventListener('click',()=>{
+    addTask(taskText.value);
 })
 
 
@@ -511,3 +517,4 @@ removeProjectDOM.addEventListener('click', ()=>{
 addTaskDOM.addEventListener('click',()=>{
 taskDialog.showModal();
 })
+
