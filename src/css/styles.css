@@ -282,18 +282,24 @@ height:90vh;
 /* Themes */
 
 .lightTheme1{
+    color:black;
     background-color: #c1c0b9;
 }
 
 .lightTheme2{
+    color:black;
     background-color: #e7e6e1;
 }
 
 .lightTheme3{
+    color:black;
     background-color:whitesmoke
 }
 
+
+
 #header{
+    
     background-color: black;
     color:white;
 }

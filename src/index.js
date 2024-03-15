@@ -80,6 +80,8 @@ const addTaskDOM = document.getElementById('addTask');
 const removeProjectDOM = document.getElementById('removeProject');
 const taskText = document.getElementById('taskText');
 
+const themeDom = document.getElementById('theme');
+
 
 
 console.log(removeProjectDOM);
