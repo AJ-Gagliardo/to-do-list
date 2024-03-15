@@ -190,19 +190,20 @@ height:90vh;
 }
 
 
-.addTask:hover, .removeProject:hover, #addProjectBtn:hover, #addProjectBtn2:hover{
+.addTask:hover, .removeProject:hover, #addProjectBtn:hover, #addProjectBtn2:hover, #theme{
 
     cursor:pointer;
     color:goldenrod;
     /* font-size: 2.2rem; */
-    transition: transform 0.2s;
+    transition: transform 0.3s;
     transform: scale(1.20);
     text-shadow: 2px 2px 4px rgba(253, 252, 252, 0.5);
 
 }
 
 #addProjectBtn:hover{
-    color:white;
+    /* color:white; */
+    color:goldenrod;
 }
 
 .addTask, .removeProject{
@@ -232,6 +233,9 @@ height:90vh;
     height:2rem;
     width:2rem;
 }
+
+
+
 
 .githublogo{
     height:2rem;
@@ -297,6 +301,22 @@ height:90vh;
 }
 
 
+.darkTheme1{
+  background-color:   #111827;
+  color:whitesmoke;
+
+}
+
+.darkTheme2{
+    background-color: #1f2937;
+    color:whitesmoke
+
+
+}
+
+.darkTheme3{
+
+}
 
 #header{
     
@@ -306,4 +326,13 @@ height:90vh;
 
 #addProjectBtn{
     color:white;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+.collapsed{
+    grid-template-columns: 10% 90%;
+    
+}
 }

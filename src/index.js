@@ -84,12 +84,7 @@ const themeDom = document.getElementById('theme');
 
 
 
-console.log(removeProjectDOM);
-
-
-console.log(addProjectBtn);
-console.log(addProjectBtn2);
-
+console.log(rightSide);
 
 // creating svgs
 
@@ -520,3 +515,23 @@ addTaskDOM.addEventListener('click',()=>{
 taskDialog.showModal();
 })
 
+
+let theme = 'light'
+themeDom.addEventListener('click',()=>{
+    if(theme==='light'){
+        leftSide.classList.remove('lightTheme2');
+        leftSide.classList.add('darkTheme1');
+
+        rightSide.classList.remove('lightTheme3');
+        rightSide.classList.add('darkTheme2');
+        theme = 'dark';
+    }
+    else if(theme==='dark'){
+        leftSide.classList.add('lightTheme2');
+        leftSide.classList.remove('darkTheme1');
+
+        rightSide.classList.add('lightTheme3');
+        rightSide.classList.remove('darkTheme2');
+        theme='light';
+    }
+})
