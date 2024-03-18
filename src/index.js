@@ -1,4 +1,6 @@
-import './css/styles.css'
+import './css/styles.css';
+import brightnessIcon from './assets/img/brightness.png';
+import githubIcon from './assets/img/githubwhite.png';
 
 
 // first have to try making it work in the console
@@ -81,9 +83,13 @@ const taskDialog = document.getElementById('taskDialog');
 const addTaskDOM = document.getElementById('addTask');
 const removeProjectDOM = document.getElementById('removeProject');
 const taskText = document.getElementById('taskText');
+const gitHubLogo = document.getElementById('githublogo');
+
 
 const themeDom = document.getElementById('theme');
 
+themeDom.src = brightnessIcon;
+gitHubLogo.src= githubIcon;
 
 
 console.log(rightSide);
