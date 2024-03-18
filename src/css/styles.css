@@ -11,9 +11,12 @@
 }
 
 #taskMenu, #description{
-    margin-right: 1rem;
+    margin-right: 2rem;
 }
 
+#addProjectBtn{
+    margin-right: 1rem;
+}
 
 }
 
