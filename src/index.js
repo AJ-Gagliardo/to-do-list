@@ -1,3 +1,4 @@
+import './css/styles.css'
 
 
 // first have to try making it work in the console
@@ -58,6 +59,7 @@ let projects = []
 
 
 // DOm selecition, areas
+
 
 const header = document.getElementById('header');
 
