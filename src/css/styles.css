@@ -10,6 +10,10 @@
     padding-right: 2%;
 }
 
+#taskMenu, #description{
+    margin-right: 1rem;
+}
+
 
 }
 

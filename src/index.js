@@ -612,7 +612,9 @@ function toggleExpanded() {
 
 if (window.matchMedia('(max-width: 600px)').matches) {
     menuSvg.addEventListener('click', toggleExpanded);
+    leftSide.addEventListener('click', toggleExpanded);
 } else {
     // Ensure that the event listener is removed for larger screens
     menuSvg.removeEventListener('click', toggleExpanded);
+    leftSide.addEventListener('click', toggleExpanded);
 }
