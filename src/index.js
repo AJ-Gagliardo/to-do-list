@@ -64,6 +64,7 @@ let projects = []
 
 
 const header = document.getElementById('header');
+const menuSvg = document.getElementById('menuSvg');
 
 
 const leftSide = document.getElementById('leftSide');
@@ -543,3 +544,75 @@ themeDom.addEventListener('click',()=>{
         theme='light';
     }
 })
+
+
+
+
+// Mobile
+
+
+
+// function toggleExpanded() {
+//   leftSide.classList.toggle('expanded');
+//   leftSide.classList.toggle('collapsed');
+
+//   if (leftSide.classList.contains('expanded')) {
+//     container.style.gridTemplateColumns = '10% 90%';
+//   } else {
+//     container.style.gridTemplateColumns = '70% 30%';
+//   }
+//   svg.style.display = leftSide.classList.contains('collapsed') ? 'block' : 'none';
+
+
+
+// }
+
+// if (window.matchMedia('(max-width: 600px)').matches) {
+//   leftSide.addEventListener('click', toggleExpanded);
+// }
+
+
+
+// if (window.matchMedia('(max-width: 600px)').matches) {
+//     container.style.gridTemplateColumns = '10% 90%';
+//   }
+  
+//   function toggleExpanded() {
+//     leftSide.classList.toggle('expanded');
+//     leftSide.classList.toggle('collapsed');
+  
+//     if (leftSide.classList.contains('expanded')) {
+//       container.style.gridTemplateColumns = '10% 90%';
+//     } else {
+//       container.style.gridTemplateColumns = '70% 30%';
+//     }
+//     svg.style.display = leftSide.classList.contains('collapsed') ? 'block' : 'none';
+//   }
+  
+//   if (window.matchMedia('(max-width: 600px)').matches) {
+//     leftSide.addEventListener('click', toggleExpanded);
+//   }
+
+// Mobile
+if (window.matchMedia('(max-width: 600px)').matches) {
+    container.style.gridTemplateColumns = '0% 100%'; // Set initial column widths for mobile
+}
+
+function toggleExpanded() {
+    leftSide.classList.toggle('expanded');
+    leftSide.classList.toggle('collapsed');
+
+    if (leftSide.classList.contains('expanded')) {
+        container.style.gridTemplateColumns = '0% 100%';
+    } else {
+        container.style.gridTemplateColumns = '100% 0%';
+    }
+    svg.style.display = leftSide.classList.contains('collapsed') ? 'block' : 'none';
+}
+
+if (window.matchMedia('(max-width: 600px)').matches) {
+    menuSvg.addEventListener('click', toggleExpanded);
+} else {
+    // Ensure that the event listener is removed for larger screens
+    menuSvg.removeEventListener('click', toggleExpanded);
+}
