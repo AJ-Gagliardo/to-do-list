@@ -278,16 +278,6 @@ for(i=0;i<projects[n].tasks.length;i++){
 }
 
 
-//  later on in dom i can do something to change class for the ones that are already done to cross out or for priority change to change color
-
-
-
-
-// barinstorm for whats next
-
-//  for the storage maybe I can store as an array (the projects) and also the array i arleady have ot tasks
-// then stringy them with JSON and then a forEach to display them 1 by one
-
 
 
 
@@ -325,9 +315,9 @@ createSampleTasks();
 
 // TESTING
 
-loadProjectsDOM();
+// loadProjectsDOM();
 currentProjectId = projects[0].id;
-loadTasksDOM();
+// loadTasksDOM();
         
 
     }
